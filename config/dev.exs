@@ -8,7 +8,7 @@ database_url =
     """
 
 # Configure your database
-config :railwayphoenix, Railwayphoenix.Repo,
+config :teapot, Teapot.Repo,
   url: database_url,
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
@@ -19,7 +19,7 @@ config :railwayphoenix, Railwayphoenix.Repo,
 # The watchers configuration can be used to run external
 # watchers to your application. For example, we use it
 # with esbuild to bundle .js and .css sources.
-config :railwayphoenix, RailwayphoenixWeb.Endpoint,
+config :teapot, TeapotWeb.Endpoint,
   # Binding to loopback ipv4 address prevents access from other machines.
   # Change to `ip: {0, 0, 0, 0}` to allow access from other machines.
   http: [ip: {127, 0, 0, 1}, port: 4000],
@@ -29,7 +29,8 @@ config :railwayphoenix, RailwayphoenixWeb.Endpoint,
   secret_key_base: "VkM/RS85P6eyHLhcTuWX+tEf+lrhOKzXHHqVaxHKw15EzysSZ9Vk3zxVqFW0UWJ3",
   watchers: [
     # Start the esbuild watcher by calling Esbuild.install_and_run(:default, args)
-    esbuild: {Esbuild, :install_and_run, [:default, ~w(--sourcemap=inline --watch)]}
+    esbuild: {Esbuild, :install_and_run, [:default, ~w(--sourcemap=inline --watch)]},
+    tailwind: {Tailwind, :install_and_run, [:default, ~w(--watch)]}
   ]
 
 # ## SSL Support
@@ -57,13 +58,13 @@ config :railwayphoenix, RailwayphoenixWeb.Endpoint,
 # different ports.
 
 # Watch static and templates for browser reloading.
-config :railwayphoenix, RailwayphoenixWeb.Endpoint,
+config :teapot, TeapotWeb.Endpoint,
   live_reload: [
     patterns: [
       ~r"priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$",
       ~r"priv/gettext/.*(po)$",
-      ~r"lib/railwayphoenix_web/(live|views)/.*(ex)$",
-      ~r"lib/railwayphoenix_web/templates/.*(eex)$"
+      ~r"lib/teapot_web/(live|views)/.*(ex)$",
+      ~r"lib/teapot_web/templates/.*(eex)$"
     ]
   ]
 

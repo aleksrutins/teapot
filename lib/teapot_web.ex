@@ -1,12 +1,12 @@
-defmodule RailwayphoenixWeb do
+defmodule TeapotWeb do
   @moduledoc """
   The entrypoint for defining your web interface, such
   as controllers, views, channels and so on.
 
   This can be used in your application as:
 
-      use RailwayphoenixWeb, :controller
-      use RailwayphoenixWeb, :view
+      use TeapotWeb, :controller
+      use TeapotWeb, :view
 
   The definitions below will be executed for every view,
   controller, etc, so keep them short and clean, focused
@@ -19,19 +19,19 @@ defmodule RailwayphoenixWeb do
 
   def controller do
     quote do
-      use Phoenix.Controller, namespace: RailwayphoenixWeb
+      use Phoenix.Controller, namespace: TeapotWeb
 
       import Plug.Conn
-      import RailwayphoenixWeb.Gettext
-      alias RailwayphoenixWeb.Router.Helpers, as: Routes
+      import TeapotWeb.Gettext
+      alias TeapotWeb.Router.Helpers, as: Routes
     end
   end
 
   def view do
     quote do
       use Phoenix.View,
-        root: "lib/railwayphoenix_web/templates",
-        namespace: RailwayphoenixWeb
+        root: "lib/teapot_web/templates",
+        namespace: TeapotWeb
 
       # Import convenience functions from controllers
       import Phoenix.Controller,
@@ -45,7 +45,7 @@ defmodule RailwayphoenixWeb do
   def live_view do
     quote do
       use Phoenix.LiveView,
-        layout: {RailwayphoenixWeb.LayoutView, "live.html"}
+        layout: {TeapotWeb.LayoutView, "live.html"}
 
       unquote(view_helpers())
     end
@@ -72,7 +72,7 @@ defmodule RailwayphoenixWeb do
   def channel do
     quote do
       use Phoenix.Channel
-      import RailwayphoenixWeb.Gettext
+      import TeapotWeb.Gettext
     end
   end
 
@@ -87,9 +87,9 @@ defmodule RailwayphoenixWeb do
       # Import basic rendering functionality (render, render_layout, etc)
       import Phoenix.View
 
-      import RailwayphoenixWeb.ErrorHelpers
-      import RailwayphoenixWeb.Gettext
-      alias RailwayphoenixWeb.Router.Helpers, as: Routes
+      import TeapotWeb.ErrorHelpers
+      import TeapotWeb.Gettext
+      alias TeapotWeb.Router.Helpers, as: Routes
     end
   end
 

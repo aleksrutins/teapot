@@ -1,5 +1,5 @@
-defmodule Railwayphoenix.Release do
-  @app :railwayphoenix
+defmodule Teapot.Release do
+  @app :teapot
 
   def migrate do
     load_app()

@@ -1,4 +1,4 @@
-defmodule RailwayphoenixWeb.ErrorHelpers do
+defmodule TeapotWeb.ErrorHelpers do
   @moduledoc """
   Conveniences for translating and building error messages.
   """
@@ -39,9 +39,9 @@ defmodule RailwayphoenixWeb.ErrorHelpers do
     # should be written to the errors.po file. The :count option is
     # set by Ecto and indicates we should also apply plural rules.
     if count = opts[:count] do
-      Gettext.dngettext(RailwayphoenixWeb.Gettext, "errors", msg, msg, count, opts)
+      Gettext.dngettext(TeapotWeb.Gettext, "errors", msg, msg, count, opts)
     else
-      Gettext.dgettext(RailwayphoenixWeb.Gettext, "errors", msg, opts)
+      Gettext.dgettext(TeapotWeb.Gettext, "errors", msg, opts)
     end
   end
 end

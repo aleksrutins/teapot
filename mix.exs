@@ -1,9 +1,9 @@
-defmodule Railwayphoenix.MixProject do
+defmodule Teapot.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :railwayphoenix,
+      app: :teapot,
       version: "0.1.0",
       elixir: "~> 1.12",
       elixirc_paths: elixirc_paths(Mix.env()),
@@ -19,7 +19,7 @@ defmodule Railwayphoenix.MixProject do
   # Type `mix help compile.app` for more information.
   def application do
     [
-      mod: {Railwayphoenix.Application, []},
+      mod: {Teapot.Application, []},
       extra_applications: [:logger, :runtime_tools]
     ]
   end
@@ -48,7 +48,9 @@ defmodule Railwayphoenix.MixProject do
       {:telemetry_poller, "~> 1.0"},
       {:gettext, "~> 0.18"},
       {:jason, "~> 1.2"},
-      {:plug_cowboy, "~> 2.5"}
+      {:plug_cowboy, "~> 2.5"},
+
+      {:tailwind, "~> 0.1", runtime: Mix.env() == :dev}
     ]
   end
 
@@ -64,7 +66,7 @@ defmodule Railwayphoenix.MixProject do
       "ecto.setup": ["ecto.create", "ecto.migrate", "run priv/repo/seeds.exs"],
       "ecto.reset": ["ecto.drop", "ecto.setup"],
       test: ["ecto.create --quiet", "ecto.migrate --quiet", "test"],
-      "assets.deploy": ["esbuild default --minify", "phx.digest"]
+      "assets.deploy": ["tailwind default --minify", "esbuild default --minify", "phx.digest"]
     ]
   end
 end

@@ -1,11 +1,11 @@
-defmodule RailwayphoenixWeb.Router do
-  use RailwayphoenixWeb, :router
+defmodule TeapotWeb.Router do
+  use TeapotWeb, :router
 
   pipeline :browser do
     plug :accepts, ["html"]
     plug :fetch_session
     plug :fetch_live_flash
-    plug :put_root_layout, {RailwayphoenixWeb.LayoutView, :root}
+    plug :put_root_layout, {TeapotWeb.LayoutView, :root}
     plug :protect_from_forgery
     plug :put_secure_browser_headers
   end
@@ -14,14 +14,14 @@ defmodule RailwayphoenixWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/", RailwayphoenixWeb do
+  scope "/", TeapotWeb do
     pipe_through :browser
 
     get "/", PageController, :index
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", RailwayphoenixWeb do
+  # scope "/api", TeapotWeb do
   #   pipe_through :api
   # end
 
@@ -37,7 +37,7 @@ defmodule RailwayphoenixWeb.Router do
 
     scope "/" do
       pipe_through :browser
-      live_dashboard "/dashboard", metrics: RailwayphoenixWeb.Telemetry
+      live_dashboard "/dashboard", metrics: TeapotWeb.Telemetry
     end
   end
 

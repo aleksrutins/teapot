@@ -1,4 +1,4 @@
-defmodule RailwayphoenixWeb.ChannelCase do
+defmodule TeapotWeb.ChannelCase do
   @moduledoc """
   This module defines the test case to be used by
   channel tests.
@@ -11,7 +11,7 @@ defmodule RailwayphoenixWeb.ChannelCase do
   we enable the SQL sandbox, so changes done to the database
   are reverted at the end of every test. If you are using
   PostgreSQL, you can even run database tests asynchronously
-  by setting `use RailwayphoenixWeb.ChannelCase, async: true`, although
+  by setting `use TeapotWeb.ChannelCase, async: true`, although
   this option is not recommended for other databases.
   """
 
@@ -21,15 +21,15 @@ defmodule RailwayphoenixWeb.ChannelCase do
     quote do
       # Import conveniences for testing with channels
       import Phoenix.ChannelTest
-      import RailwayphoenixWeb.ChannelCase
+      import TeapotWeb.ChannelCase
 
       # The default endpoint for testing
-      @endpoint RailwayphoenixWeb.Endpoint
+      @endpoint TeapotWeb.Endpoint
     end
   end
 
   setup tags do
-    pid = Ecto.Adapters.SQL.Sandbox.start_owner!(Railwayphoenix.Repo, shared: not tags[:async])
+    pid = Ecto.Adapters.SQL.Sandbox.start_owner!(Teapot.Repo, shared: not tags[:async])
     on_exit(fn -> Ecto.Adapters.SQL.Sandbox.stop_owner(pid) end)
     :ok
   end

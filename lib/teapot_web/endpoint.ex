@@ -1,12 +1,12 @@
-defmodule RailwayphoenixWeb.Endpoint do
-  use Phoenix.Endpoint, otp_app: :railwayphoenix
+defmodule TeapotWeb.Endpoint do
+  use Phoenix.Endpoint, otp_app: :teapot
 
   # The session will be stored in the cookie and signed,
   # this means its contents can be read but not tampered with.
   # Set :encryption_salt if you would also like to encrypt it.
   @session_options [
     store: :cookie,
-    key: "_railwayphoenix_key",
+    key: "_teapot_key",
     signing_salt: "ht9sCbhT"
   ]
 
@@ -18,7 +18,7 @@ defmodule RailwayphoenixWeb.Endpoint do
   # when deploying your static files in production.
   plug Plug.Static,
     at: "/",
-    from: :railwayphoenix,
+    from: :teapot,
     gzip: false,
     only: ~w(assets fonts images favicon.ico robots.txt)
 
@@ -28,7 +28,7 @@ defmodule RailwayphoenixWeb.Endpoint do
     socket "/phoenix/live_reload/socket", Phoenix.LiveReloader.Socket
     plug Phoenix.LiveReloader
     plug Phoenix.CodeReloader
-    plug Phoenix.Ecto.CheckRepoStatus, otp_app: :railwayphoenix
+    plug Phoenix.Ecto.CheckRepoStatus, otp_app: :teapot
   end
 
   plug Phoenix.LiveDashboard.RequestLogger,
@@ -46,5 +46,5 @@ defmodule RailwayphoenixWeb.Endpoint do
   plug Plug.MethodOverride
   plug Plug.Head
   plug Plug.Session, @session_options
-  plug RailwayphoenixWeb.Router
+  plug TeapotWeb.Router
 end

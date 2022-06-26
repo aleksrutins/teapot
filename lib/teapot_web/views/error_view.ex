@@ -1,5 +1,5 @@
-defmodule RailwayphoenixWeb.ErrorView do
-  use RailwayphoenixWeb, :view
+defmodule TeapotWeb.ErrorView do
+  use TeapotWeb, :view
 
   # If you want to customize a particular status code
   # for a certain format, you may uncomment below.

@@ -7,14 +7,14 @@
 # General application configuration
 import Config
 
-config :railwayphoenix,
-  ecto_repos: [Railwayphoenix.Repo]
+config :teapot,
+  ecto_repos: [Teapot.Repo]
 
 # Configures the endpoint
-config :railwayphoenix, RailwayphoenixWeb.Endpoint,
+config :teapot, TeapotWeb.Endpoint,
   url: [host: "localhost"],
-  render_errors: [view: RailwayphoenixWeb.ErrorView, accepts: ~w(html json), layout: false],
-  pubsub_server: Railwayphoenix.PubSub,
+  render_errors: [view: TeapotWeb.ErrorView, accepts: ~w(html json), layout: false],
+  pubsub_server: Teapot.PubSub,
   live_view: [signing_salt: "3k01Sd7W"]
 
 # Configures the mailer
@@ -24,7 +24,7 @@ config :railwayphoenix, RailwayphoenixWeb.Endpoint,
 #
 # For production it's recommended to configure a different adapter
 # at the `config/runtime.exs`.
-config :railwayphoenix, Railwayphoenix.Mailer, adapter: Swoosh.Adapters.Local
+config :teapot, Teapot.Mailer, adapter: Swoosh.Adapters.Local
 
 # Swoosh API client is needed for adapters other than SMTP.
 config :swoosh, :api_client, false
@@ -45,6 +45,16 @@ config :logger, :console,
 
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason
+
+# TailwindCSS
+config :tailwind, version: "3.1.4", default: [
+  args: ~w(
+    --config=tailwind.config.js
+    --input=css/app.css
+    --output=../priv/static/assets/app.css
+  ),
+  cd: Path.expand("../assets", __DIR__)
+]
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.

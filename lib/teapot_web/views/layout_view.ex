@@ -1,5 +1,5 @@
-defmodule RailwayphoenixWeb.LayoutView do
-  use RailwayphoenixWeb, :view
+defmodule TeapotWeb.LayoutView do
+  use TeapotWeb, :view
 
   # Phoenix LiveDashboard is available only in development by default,
   # so we instruct Elixir to not warn if the dashboard route is missing.

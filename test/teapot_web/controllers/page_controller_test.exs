@@ -1,5 +1,5 @@
-defmodule RailwayphoenixWeb.PageControllerTest do
-  use RailwayphoenixWeb.ConnCase
+defmodule TeapotWeb.PageControllerTest do
+  use TeapotWeb.ConnCase
 
   test "GET /", %{conn: conn} do
     conn = get(conn, "/")

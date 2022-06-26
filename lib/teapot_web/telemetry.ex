@@ -1,4 +1,4 @@
-defmodule RailwayphoenixWeb.Telemetry do
+defmodule TeapotWeb.Telemetry do
   use Supervisor
   import Telemetry.Metrics
 
@@ -31,23 +31,23 @@ defmodule RailwayphoenixWeb.Telemetry do
       ),
 
       # Database Metrics
-      summary("railwayphoenix.repo.query.total_time",
+      summary("teapot.repo.query.total_time",
         unit: {:native, :millisecond},
         description: "The sum of the other measurements"
       ),
-      summary("railwayphoenix.repo.query.decode_time",
+      summary("teapot.repo.query.decode_time",
         unit: {:native, :millisecond},
         description: "The time spent decoding the data received from the database"
       ),
-      summary("railwayphoenix.repo.query.query_time",
+      summary("teapot.repo.query.query_time",
         unit: {:native, :millisecond},
         description: "The time spent executing the query"
       ),
-      summary("railwayphoenix.repo.query.queue_time",
+      summary("teapot.repo.query.queue_time",
         unit: {:native, :millisecond},
         description: "The time spent waiting for a database connection"
       ),
-      summary("railwayphoenix.repo.query.idle_time",
+      summary("teapot.repo.query.idle_time",
         unit: {:native, :millisecond},
         description:
           "The time the connection spent waiting before being checked out for the query"
@@ -65,7 +65,7 @@ defmodule RailwayphoenixWeb.Telemetry do
     [
       # A module, function and arguments to be invoked periodically.
       # This function must call :telemetry.execute/3 and a metric must be added above.
-      # {RailwayphoenixWeb, :count_users, []}
+      # {TeapotWeb, :count_users, []}
     ]
   end
 end

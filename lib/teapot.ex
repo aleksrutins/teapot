@@ -1,6 +1,6 @@
-defmodule Railwayphoenix do
+defmodule Teapot do
   @moduledoc """
-  Railwayphoenix keeps the contexts that define your domain
+  Teapot keeps the contexts that define your domain
   and business logic.
 
   Contexts are also responsible for managing your data, regardless

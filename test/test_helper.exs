@@ -1,2 +1,2 @@
 ExUnit.start()
-Ecto.Adapters.SQL.Sandbox.mode(Railwayphoenix.Repo, :manual)
+Ecto.Adapters.SQL.Sandbox.mode(Teapot.Repo, :manual)

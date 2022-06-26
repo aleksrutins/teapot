@@ -78,8 +78,8 @@ RUN \
 USER "${USER}"
 
 # copy release executables
-COPY --from=build --chown="${USER}":"${USER}" /app/_build/"${MIX_ENV}"/rel/railwayphoenix ./
+COPY --from=build --chown="${USER}":"${USER}" /app/_build/"${MIX_ENV}"/rel/teapot ./
 
-ENTRYPOINT ["bin/railwayphoenix"]
+ENTRYPOINT ["bin/teapot"]
 
 CMD ["start"]
