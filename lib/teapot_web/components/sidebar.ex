@@ -5,7 +5,7 @@ defmodule TeapotWeb.Components.Sidebar do
   def sidebar_link(assigns) do
     ~H"""
       <a
-        class="block px-4 py-2 rounded bg-slate-800 hover:bg-slate-700 focus:outline-none focus:bg-gray-100 focus:text-gray-900 transition"
+        class="block px-4 py-2 rounded bg-slate-50 hover:bg-slate-300 dark:bg-slate-800 dark:hover:bg-slate-700 focus:outline-none focus:bg-gray-100 focus:text-gray-900 transition"
         href={@href}
       >
         <%= assigns[:text] %>
@@ -14,7 +14,7 @@ defmodule TeapotWeb.Components.Sidebar do
   end
   def sidebar(assigns) do
     ~H"""
-      <div class="bg-slate-900 flex flex-col justify-between p-2">
+      <div class="flex flex-col justify-between p-2">
         <div class="flex flex-col">
           <.sidebar_link text="Home" href="/"/>
         </div>
