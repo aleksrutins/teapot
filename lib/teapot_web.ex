@@ -76,6 +76,12 @@ defmodule TeapotWeb do
     end
   end
 
+  def components_basic do
+    quote do
+      import TeapotWeb.Components.Button
+    end
+  end
+
   defp view_helpers do
     quote do
       # Use all HTML functionality (forms, tags, etc)

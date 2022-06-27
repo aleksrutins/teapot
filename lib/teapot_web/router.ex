@@ -52,4 +52,9 @@ defmodule TeapotWeb.Router do
       forward "/mailbox", Plug.Swoosh.MailboxPreview
     end
   end
+
+  scope "/design" do
+    pipe_through :browser
+    get "/library", TeapotWeb.DesignController, :library
+  end
 end
