@@ -35,12 +35,12 @@ RUN mix deps.compile
 # copy assets
 COPY priv priv
 COPY assets assets
+COPY lib lib
 
 # Compile assets
 RUN mix assets.deploy
 
 # compile project
-COPY lib lib
 RUN mix compile
 
 # copy runtime configuration file
