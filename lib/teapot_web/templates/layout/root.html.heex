@@ -8,9 +8,12 @@
     <%= live_title_tag assigns[:page_title] || "Teapot", suffix: " · Phoenix Framework" %>
     <link phx-track-static rel="stylesheet" href={Routes.static_path(@conn, "/assets/app.css")}/>
     <script defer phx-track-static type="text/javascript" src={Routes.static_path(@conn, "/assets/app.js")}></script>
+    <meta name="theme-color" content="rgb(15 23 42)">
   </head>
-  <body class="bg-slate-800 text-white flex flex-row h-full">
+  <body class="bg-slate-900 text-white flex flex-row h-full">
     <TeapotWeb.Components.Sidebar.sidebar/>
-    <%= @inner_content %>
+    <div class="flex-grow bg-slate-800 rounded-tl-md p-3 overflow-auto">
+      <%= @inner_content %>
+    </div>
   </body>
 </html>

@@ -5,7 +5,7 @@ defmodule TeapotWeb.Components.Sidebar do
   def sidebar_link(assigns) do
     ~H"""
       <a
-        class="block px-4 py-2 rounded bg-slate-800 hover:bg-slate-700 focus:outline-none focus:bg-gray-100 focus:text-gray-900"
+        class="block px-4 py-2 rounded bg-slate-800 hover:bg-slate-700 focus:outline-none focus:bg-gray-100 focus:text-gray-900 transition"
         href={@href}
       >
         <%= assigns[:text] %>
