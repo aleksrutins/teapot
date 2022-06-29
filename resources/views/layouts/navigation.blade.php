@@ -8,8 +8,8 @@ $links = array(
 
 <nav x-data="{ open: false }" class="border-b border-gray-100">
     <!-- Primary Navigation Menu -->
-    <div class="mx-auto flex flex-col justify-between px-4 py-4 sm:px-6 lg:px-8">
-        <div class="flex sm:flex-col justify-between">
+    <div class="mx-auto flex flex-col justify-between px-4 py-4 sm:px-6 lg:px-8 h-full">
+        <div class="flex sm:flex-col justify-between h-full">
             <div class="flex sm:flex-col">
                 <!-- Logo -->
                 <div class="shrink-0 flex justify-center">
