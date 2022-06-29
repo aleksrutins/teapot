@@ -1,4 +1,4 @@
-@props(['align' => 'right', 'width' => '48', 'contentClasses' => 'py-1 bg-white'])
+@props(['align' => 'right', 'direction' => 'down', 'width' => '48', 'contentClasses' => 'py-1 bg-white'])
 
 @php
 switch ($align) {
@@ -21,12 +21,18 @@ switch ($width) {
         $width = 'w-48';
         break;
 }
+
+if($direction == "up") {
+    $alignmentClasses .= ' bottom-[100%]';
+}
 @endphp
 
-<div class="relative" x-data="{ open: false }" @click.outside="open = false" @close.stop="open = false">
+<div class="relative overflow-visible" x-data="{ open: false }" @click.outside="open = false" @close.stop="open = false">
+    @if($direction != "up")
     <div @click="open = ! open">
         {{ $trigger }}
     </div>
+    @endif
 
     <div x-show="open"
             x-transition:enter="transition ease-out duration-200"
@@ -42,4 +48,10 @@ switch ($width) {
             {{ $content }}
         </div>
     </div>
+
+    @if($direction == "up")
+    <div @click="open = ! open">
+        {{ $trigger }}
+    </div>
+    @endif
 </div>
