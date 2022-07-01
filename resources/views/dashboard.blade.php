@@ -10,7 +10,7 @@
             <h1 class="text-3xl text-gray-700 dark:text-gray-300 font-extrabold mb-2">Welcome!</h1>
             <x-card>
                 <h2 class="text-xl text-gray-600 dark:text-gray-400 font-bold mb-1">Your Projects</h2>
-
+                <livewire:projects-list />
             </x-card>
         </div>
     </div>
